@@ -10,8 +10,10 @@ npm run build
 cd dist
 
 git init
+git config user.name sirm2z
+git config user.email sirm2zisv@gmail.com
 git add -A
-git commit -m 'deploy'
+git commit -m 'deploy: gh-pages'
 
 # 部署到 https://<USERNAME>.github.io/<REPO>
 git push -f git@github.com:SirM2z/ppt.git master:gh-pages
