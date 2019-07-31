@@ -46,10 +46,10 @@
       eg-transition(enter='bounceInLeft' leave='bounceOutLeft')
         p.first-content
           <a href="https://github.com/promises-aplus/promises-tests#readme" target="_blank">promises-aplus-tests</a>
-      eg-transition(v-if="step >=2" enter='bounceInLeft' leave='bounceOutLeft')
-        p.left 在 Promise 实现中加入下方代码
-      eg-transition(v-if="step >=2" enter='flipInX')
-        eg-code-block(lang='html').
+      eg-transition(enter='bounceInLeft' leave='bounceOutLeft')
+        p.left(v-if="step >=2") 在 Promise 实现中加入下方代码
+      eg-transition(enter='flipInX')
+        eg-code-block(lang='html' v-if="step >=2").
           Promise.defer = Promise.deferred = function () {
             let dfd = {};
             dfd.promise = new Promise((resolve, reject) => {
@@ -58,10 +58,10 @@
             });
             return dfd;
           }
-      eg-transition(v-if="step >=2" enter='bounceInLeft' leave='bounceOutLeft')
-        p.left 在 package.json 中加入下方 script
-      eg-transition(v-if="step >=2" enter='flipInX')
-        eg-code-block(lang='html').
+      eg-transition(enter='bounceInLeft' leave='bounceOutLeft')
+        p.left(v-if="step >=2") 在 package.json 中加入下方 script
+      eg-transition(enter='flipInX')
+        eg-code-block(lang='html' v-if="step >=2").
           "test": "promises-aplus-tests ./promise.js"
 
     slide(enter='bounceInDown')
