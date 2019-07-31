@@ -40,7 +40,22 @@
           p.left
             <a href="https://wiki.ryanc.top/translation/promisesaplus.html" target="_blank">译文</a>
     slide(enter='bounceInDown')
-      h2.first-content.center 手撕 Promise
+      h3.center 手撕 Promise
+      eg-transition(enter='bounceInRight' leave='bounceOutLeft')
+        p.left
+          <b>1.</b>Promises 骨架
+      eg-transition(enter='bounceInRight' leave='bounceOutLeft')
+        p.left
+          <b>2.</b>executor 错误收集
+      eg-transition(enter='bounceInRight' leave='bounceOutLeft')
+        p.left
+          <b>3.</b>同步/异步 executor （判断逻辑在 then 中）
+      eg-transition(enter='bounceInRight' leave='bounceOutLeft')
+        p.left
+          <b>4.</b>异步 resolve reject 的问题 （转移状态判断）
+      eg-transition(enter='bounceInRight' leave='bounceOutLeft')
+        p.left
+          <b>5.</b>then 链 同步/异步调用
     slide(:steps=2, enter='bounceInDown')
       h4 Promises/A+ 测试
       eg-transition(enter='bounceInLeft' leave='bounceOutLeft')
