@@ -36,13 +36,34 @@
       eg-transition(enter='bounceInDown' leave='bounceOutUp')
           p.left
             <a href="https://promisesaplus.com/" target="_blank">https://promisesaplus.com/</a>
+      eg-transition(enter='bounceInDown' leave='bounceOutUp')
+          p.left
+            <a href="https://wiki.ryanc.top/translation/promisesaplus.html" target="_blank">译文</a>
     slide(enter='bounceInDown')
       h2.first-content.center 手撕 Promise
-    slide(enter='bounceInDown')
+    slide(:steps=2, enter='bounceInDown')
       h4 Promises/A+ 测试
       eg-transition(enter='bounceInLeft' leave='bounceOutLeft')
         p.first-content
           <a href="https://github.com/promises-aplus/promises-tests#readme" target="_blank">promises-aplus-tests</a>
+      eg-transition(v-if="step >=2" enter='bounceInLeft' leave='bounceOutLeft')
+        p.left 在 Promise 实现中加入下方代码
+      eg-transition(v-if="step >=2" enter='flipInX')
+        eg-code-block(lang='html').
+          Promise.defer = Promise.deferred = function () {
+            let dfd = {};
+            dfd.promise = new Promise((resolve, reject) => {
+                dfd.resolve = resolve;
+                dfd.reject = reject;
+            });
+            return dfd;
+          }
+      eg-transition(v-if="step >=2" enter='bounceInLeft' leave='bounceOutLeft')
+        p.left 在 package.json 中加入下方 script
+      eg-transition(v-if="step >=2" enter='flipInX')
+        eg-code-block(lang='html').
+          "test": "promises-aplus-tests ./promise.js"
+
     slide(enter='bounceInDown')
       h1.center.end END
       eg-transition(enter='flipInX')
